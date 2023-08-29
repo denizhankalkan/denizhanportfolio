@@ -78,7 +78,7 @@ export const info = {
     ,
     hobbies: [
         {
-            label: 'Travel',
+            label: 'Guitar',
             emoji: '📖'
         },
         {
