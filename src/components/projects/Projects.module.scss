@@ -1,0 +1,10 @@
+// Project.module.scss
+.projectCard {
+    width: 300px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
