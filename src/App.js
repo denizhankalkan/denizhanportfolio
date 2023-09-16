@@ -4,7 +4,6 @@ import BaseLayout from "./components/BaseLayout";
 import {BrowserRouter} from "react-router-dom";
 import styled from 'styled-components';
 
-
 const AppDiv = styled.div`
   display: flex;
   min-height: 100vh;

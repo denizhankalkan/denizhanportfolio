@@ -1,7 +1,7 @@
-import { injectGlobal } from 'styled-components';
 import { ColorScheme } from './styleConstants';
+import { createGlobalStyle } from 'styled-components';
 
-injectGlobal`
+export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight');
   @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 

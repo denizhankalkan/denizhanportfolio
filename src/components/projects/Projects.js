@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-
 import { ColorScheme } from "../theme/styleConstants.js";
+import {info} from "../../info/Info.js";
 
 const PortRow = styled.div`
   margin: 0;
@@ -19,6 +19,7 @@ const CodeThumbnail = styled.img`
 export const CenteredHeader = styled.h4`
   text-align: center;
   margin-bottom: 1.25em;
+  margin-top: 1rem;
 `
 
 const PortAllText = styled.div`
@@ -44,7 +45,7 @@ const PortTitleContainer = styled.div`
 const PortTitle = styled.h2`
   flex: 1;
   font-family: Gotham, Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
+  font-weight: 400;
 
   @media (max-width: 600px) {
     text-align: center;
@@ -115,19 +116,38 @@ const Container = styled.div`
   font-size: 16px;
 `
 
-export default function Project() {
+const Line = styled.hr`
+  margin-right: 40px;
+  margin-left: 40px;
+  color: pink;
+  border: 1px solid #eee;
+`
 
+const SkillContainer = styled.div`
+ margin-top: 6rem;
+ margin-left: 2rem;
+`
+
+const SubTitle = styled.h5`
+ margin-top: 1rem;
+`
+
+export default function Project() {
     return (
       <Container>
-        <div>
-          <CenteredHeader>Skills:</CenteredHeader>
-          <div className="row">
+        <SkillContainer>
+          <CenteredHeader><span style={{background: info.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Skills:</span></CenteredHeader>
+          <div>
             <div className="col-lg-4 col-md-4 col-sm-4">
-              <h5>Front-end:</h5>
+              <SubTitle>Front-end:</SubTitle>
               <ul>
-                <li>JavaScript (ES6)</li>
+                <li>JavaScript (ES6/ES7/ES8)</li>
                 <li>React</li>
                 <li>Redux</li>
+                <li>Angular</li>
+                <li>RXJS</li>
+                <li>Docker</li>
+                <li>Kubernetes</li>
                 <li>HTML5</li>
                 <li>CSS3/Sass/Emotion</li>
                 <li>AJAX</li>
@@ -137,40 +157,45 @@ export default function Project() {
               </ul>
             </div>
             <div className="col-lg-4 col-md-4 col-sm-4">
-              <h5>Back-end:</h5>
+              <SubTitle>Back-end:</SubTitle>
               <ul>
                 <li>Node.js</li>
                 <li>Firestore/Firebase</li>
                 <li>Google Cloud Functions</li>
                 <li>Express</li>
                 <li>SQL/PostgreSQL</li>
+                <li>Python</li>
+                <li>C#</li>
+                <li>Java</li>
+                <li>Spring</li>
               </ul>
             </div>
             <div className="col-lg-4 col-md-4 col-sm-4">
-              <h5>Other:</h5>
+              <SubTitle>Other:</SubTitle>
               <ul>
                 <li>Git</li>
                 <li>Webpack</li>
                 <li>JSON</li>
+                <li>Azure Devops</li>
                 <li>Agile development</li>
               </ul>
             </div>
           </div>
-        </div>
-        <hr />
+        </SkillContainer>
+        
         <div>
-          <CenteredHeader>Recent work:</CenteredHeader>
+          <CenteredHeader><span style={{background: info.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}> Recent Work: </span></CenteredHeader>
           <PortRow>
             {/* <a href="https://open.nytimes.com/building-a-text-editor-for-a-digital-first-newsroom-f1cb8367fc21" target="_blank">
               <CodeThumbnail src={require("../assets/oakgif.gif")} />
             </a> */}
+            
             <PortAllText>
               <PortTitle>Real Time Cyrpto Tracking</PortTitle>
               <PortDescription>
-                Since November 2017, I've been working full-time on the Publishing team at the New York Times, creating an advanced text editor and adjacent technologies for the newsroom. This GIF demonstrates our newsroom-specific track-changes ("version diffing") feature -- one of dozens (hundreds?) that makes this software special.
+              When you start typing the crypto you want to see the data of in the search bar, the trading values come to the table. With the Binance API, you can see real time data on the screen with websockets. Very soon, different features will be added and we will have the result of a parallel Binance website.
               </PortDescription>
               <PortDescription>
-                You can read more about Oak in my article on the Times Open blog: <br/>
                 {/* <a href="https://open.nytimes.com/building-a-text-editor-for-a-digital-first-newsroom-f1cb8367fc21" target="_blank">
                   Building a Text Editor For a Digital-First Newsroom
                 </a> */}
@@ -186,7 +211,7 @@ export default function Project() {
               </UsedList>
             </PortAllText>
           </PortRow>
-          <hr />
+          <Line />
           <PortRow>
             {/* <a href="https://align-a0b08.web.app/" target="_blank">
               <CodeThumbnail src={require("../assets/AlignScreenshot.png")} />
@@ -194,7 +219,7 @@ export default function Project() {
             <PortAllText>
               <PortTitleContainer>
                 <PortTitle>Denmax Travel</PortTitle>
-                <PortButtonContainer>
+                {/* <PortButtonContainer>
                   <PortButton href="https://align-a0b08.web.app" target="_blank">
                     Demo
                 </PortButton>
@@ -204,22 +229,18 @@ export default function Project() {
                   >
                     Code
                 </PortButton>
-                </PortButtonContainer>
+                </PortButtonContainer> */}
               </PortTitleContainer>
               <PortDescription>
-                My capstone project from the Grace Hopper Program, Align is a web
-                application for setting and managing long-term goals with a
-                beautiful and intuitive interface. It includes image uploading
-                capability, resource cards to save helpful links, a rich text
-                editor, and live updating using Firebase WebSocket integration.
+              The story of the Denmax Travel app actually emerged with the idea of my challange to travel Europe on my own. I thought about which steps I had the most difficulty in this process and then I came up with the idea of making such an app. We write down which route we will take and where we will start. We also enter where and where we will end this travel. After entering the date information, the AI on our website shows us the most economical and least tiring travel plan. It will be completed very soon!
               </PortDescription>
-              <PortDescription>
+              {/* <PortDescription>
                 I worked with two incredibly smart teammates to create Align in
               three weeks. You can read about our process building it{" "}
                 <a href="https://medium.com/ladies-storm-hackathons/how-we-built-our-first-full-stack-javascript-web-app-in-three-weeks-8a4668dbd67c">
                   here
               </a>.
-            </PortDescription>
+            </PortDescription> */}
               <UsedList>
                 <UsedItem>React.js</UsedItem>
                 <UsedItem>Firebase</UsedItem>
@@ -228,7 +249,7 @@ export default function Project() {
               </UsedList>
             </PortAllText>
           </PortRow>
-          <hr />
+          <Line />
           <PortRow>
             {/* <a href="https://github.com/sophiaciocca/ok-collab" target="_blank">
               <CodeThumbnail
@@ -238,45 +259,30 @@ export default function Project() {
             <PortAllText>
               <PortTitleContainer>
                 <PortTitle>Security Robot</PortTitle>
-                <PortButtonContainer>
+                {/* <PortButtonContainer>
                   <PortButton
                     href="https://github.com/sophiaciocca/ok-collab"
                     target="_blank"
                   >
                     Code
                   </PortButton>
-                </PortButtonContainer>
+                </PortButtonContainer> */}
               </PortTitleContainer>
               <PortDescription>
-                For my hackathon project at Grace Hopper, I spent three days
-                building an app I always wished I'd had -- a social network for
-                musicians to find other musicians to collaborate with. It's like
-                OkCupid, except instead of dates it's for finding people to jam
-                with and make tracks. View all users, view each user's profile and
-                information, play their embedded Youtube videos, and see similar
-                users in the sidebar.
+              The security robot, which I completed as my university graduation thesis, can be used in every home and every workplace. In this project, which I developed with Python programming language and openCV library, we worked in collaboration with a friend. The purpose of the robot is to send a notification to the application on the phone when it detects foreign faces with the face recognition system. The external design of the robot was printed with a 3D printer. Visuals and source code will be added soon.
             </PortDescription>
-              <PortDescription>
-                OkCollab is responsive and works on devices of all sizes. You can
-              watch me present it live{" "}
-                {/* <a
-                  href="https://www.youtube.com/watch?v=qyLoInHNjoc"
-                  target="_blank"
-                >
-                  here
-              </a>. */}
-            </PortDescription>
+          
               <UsedList>
-                <UsedItem>React.js</UsedItem>
-                <UsedItem>Redux</UsedItem>
+                <UsedItem>Python</UsedItem>
+                <UsedItem>OpenCV</UsedItem>
                 <UsedItem>PostgreSQL</UsedItem>
-                <UsedItem>CSS</UsedItem>
+                <UsedItem>JavaScript</UsedItem>
                 <UsedItem>Node.JS</UsedItem>
-                <UsedItem>Express</UsedItem>
+                <UsedItem>HTML</UsedItem>
               </UsedList>
             </PortAllText>
           </PortRow>
-          <hr />
+          <Line />
           <PortRow>
             {/* <a href="https://github.com/limitless-leggings/limitless-leggings" target="_blank">
               <CodeThumbnail
@@ -286,20 +292,17 @@ export default function Project() {
             <PortAllText>
               <PortTitleContainer>
                 <PortTitle>Wheater Application</PortTitle>
-                <PortButtonContainer>
+                {/* <PortButtonContainer>
                   <PortButton
                     href="https://github.com/limitless-leggings/limitless-leggings"
                     target="_blank"
                   >
                     Code
                   </PortButton>
-                </PortButtonContainer>
+                </PortButtonContainer> */}
               </PortTitleContainer>
               <PortDescription>
-                Limitless Leggings is a full-stack e-commerce site built from
-                scratch. It includes products filterable by category; working
-                signup, login, and o-auth capabilities; and a working cart model
-                built in PostgreSQL.
+              After adding city and country information, the application brings real time weather information and a list of recommendations. Very soon I aim to add risks related to natural disasters (earthquakes, floods, storms) to the information box.
             </PortDescription>
               <UsedList>
                 <UsedItem>React.js</UsedItem>
