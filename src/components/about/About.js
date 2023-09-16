@@ -3,7 +3,14 @@ import Style from './About.module.scss';
 import Terminal from "./Terminal";
 import {Box} from "@mui/material";
 import {info} from "../../info/Info";
+import styled from "styled-components";
 
+const Container = styled.div`
+  display: inline-flex;
+  margin: 0 5px;
+  color: black;
+  font-size: 16px;
+`
 
 export default function About() {
     const firstName = info.firstName.toLowerCase()
@@ -58,10 +65,3 @@ export default function About() {
         </Box>
     )
 }
-
-
-
-// Life Professional work summary 
-
-// cover letter for them 
-
