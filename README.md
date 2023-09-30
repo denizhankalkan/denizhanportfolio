@@ -1,3 +1,3 @@
-# React Portfolio, multiple pages with dark mode
+# React Portfolio, multiple pages
 
 
